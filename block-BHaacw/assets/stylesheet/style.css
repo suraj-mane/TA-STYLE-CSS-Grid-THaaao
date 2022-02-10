@@ -1,0 +1,315 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-color: #3a4a50;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  display: inline;
+}
+
+.header, .left-top, .left-bottom, .right-top, .right-middle, .right-bottom, .main {
+  border-top: 3px solid #0094bf;
+}
+
+.header, .left-top, .left-bottom, .right-top, .right-middle, .right-bottom, .main {
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 14px;
+  display: block;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  max-width: 80%;
+  margin: 0 auto;
+  grid-gap: 30px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: repeat(3, 1fr);
+      grid-template-areas: "header header header" "left-top main right-top" "left-bottom main right-middle" " . main right-bottom";
+}
+
+.container a {
+  color: red;
+}
+
+h2 {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.item {
+  background-color: antiquewhite;
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+  width: 100%;
+}
+
+.left-top {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: left-top;
+}
+
+.left-bottom {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: left-bottom;
+  grid-row: span 2;
+}
+
+.left-bottom img {
+  display: block;
+  width: 50%;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.right-top {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: right-top;
+}
+
+.right-top a {
+  background-color: red;
+  color: #fff;
+}
+
+.right-middle {
+  grid-area: right-mioddle;
+}
+
+.right-middle h2 {
+  background-color: #0094bf;
+}
+
+.right-bottom {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: right-bottom;
+}
+
+.main {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: main;
+  grid-row: span 3;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+.main img {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+p {
+  padding: 5px 10px 15px 10px;
+  font-size: 14px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+}
+
+.header {
+  background-color: #fff;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+}
+
+.header a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #0094bf;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navbar {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -ms-grid-columns: repeat auto-fit, minmax(100px, 1fr);
+      grid-template-columns: repeat auto-fit, minmax(100px, 1fr);
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.left-bottom {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+.right-middle {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: right-middle;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "header header " "left-top  right-top" "left-bottom right-middle" " . right-bottom" "main . ";
+  }
+  .header {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .left-top {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .left-bottom {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  .right-top {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .right-bottom {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  .right-middle {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  .main {
+    -webkit-box-ordinal-group: 8;
+        -ms-flex-order: 7;
+            order: 7;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+        grid-template-areas: "header" "left-top " "left-bottom" "main" "right-top" "right-middle" "right-bottom";
+    border: 2px solid red;
+  }
+  .header {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .left-top {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .left-bottom {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    grid-row: span 1;
+  }
+  .main {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    grid-row: span 1;
+  }
+  .right-top {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  .right-middle {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  .right-bottom {
+    -webkit-box-ordinal-group: 201;
+        -ms-flex-order: 200;
+            order: 200;
+  }
+}
+/*# sourceMappingURL=style.css.map */
