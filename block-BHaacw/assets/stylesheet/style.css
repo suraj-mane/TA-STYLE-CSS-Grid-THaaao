@@ -1,0 +1,219 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #3B4B4F;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-color, .header, .left-top, .main, .right-top, .left-bottom, .right-middel, .right-bottom {
+  color: #000;
+  border-top: 5px solid #0195BF;
+  background-color: #fff;
+}
+
+h1 {
+  font-size: 3rem;
+  padding: 3rem 0;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.text-size h2, .left-top h2, .main h2, .right-top h2, .left-bottom h2, .right-middel h2, .right-bottom h2 {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.text-size p, .left-top p, .main p, .right-top p, .left-bottom p, .right-middel p, .right-bottom p {
+  padding: 1rem 0.5rem;
+}
+
+.text-size a, .left-top a, .main a, .right-top a, .left-bottom a, .right-middel a, .right-bottom a {
+  color: red;
+  padding: 0.5rem;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 10px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-row: auto;
+  padding: 0 1rem;
+      grid-template-areas: "header header header" "left-top main right-top" "left-bottom main right-middel" ". main right-bottom";
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+  padding: 0rem 1rem;
+}
+
+.navbar {
+  padding: 1.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.navbar a {
+  font-size: 1.5rem;
+  color: #2E95BF;
+}
+
+.left-top {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: left-top;
+}
+
+.main {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: main;
+}
+
+.main img {
+  width: 50%;
+  height: 300px;
+  margin: 1rem 6rem;
+  border-radius: 50%;
+}
+
+.right-top {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: right-top;
+}
+
+.right-top .link {
+  background-color: red;
+  padding: 0.5rem 0;
+}
+
+.right-top .link a {
+  color: #fff;
+}
+
+.left-bottom {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: left-bottom;
+}
+
+.left-bottom img {
+  width: 100px;
+  height: 100px;
+  margin-left: 7rem;
+}
+
+.right-middel {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: right-middel;
+}
+
+.right-middel .title {
+  background-color: #0195BF;
+  font-weight: 600;
+  color: #fff;
+}
+
+.right-bottom {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: right-bottom;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    display: -ms-grid;
+    display: grid;
+    max-width: 992;
+    margin: 0 auto;
+    gap: 30px;
+    grid-row: auto;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "header header" "left-top right-top" "left-bottom right-middel" "main right-bottom" "main .";
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    display: -ms-grid;
+    display: grid;
+    margin: 0 auto;
+    gap: 30px;
+    grid-row: auto;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "header" "left-top"  "left-bottom" "main" "right-top"  "right-middel" "right-bottom";
+  }
+}
+/*# sourceMappingURL=style.css.map */
